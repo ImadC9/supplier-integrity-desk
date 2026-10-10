@@ -7,7 +7,7 @@ numpy==2.5.3
 altair==6.3.0
 langchain-core==1.6.3
 langgraph==1.2.11
-llama-index-core==0.14.24
+llama-index-core==0.14.25
 streamlit==1.63.0
 # Optional features
 google-genai==2.23.0
