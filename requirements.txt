@@ -11,7 +11,7 @@ llama-index-core==0.14.24
 streamlit==1.63.0
 # Optional features
 google-genai==2.23.0
-fastembed==0.8.0
+fastembed==0.8.1
 sqlalchemy==2.0.44
 # Install this repository as a package so `import supplier_agent` works anywhere.
 -e .
