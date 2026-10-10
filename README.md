@@ -17,6 +17,41 @@ Runs locally, in English or Spanish. No API key needed. Your data is never modif
 
 ![Overview dashboard](docs/images/overview.png)
 
+## Quick start
+
+Requires Python 3.11+. Clone the project and create a virtual environment:
+
+```bash
+git clone https://github.com/ImadC9/supplier-integrity-desk.git
+cd supplier-integrity-desk
+python -m venv .venv
+```
+
+**macOS / Linux:**
+
+```bash
+source .venv/bin/activate
+python -m pip install -e .
+supplier-desk app
+```
+
+**Windows PowerShell:**
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -e .
+.\.venv\Scripts\supplier-desk.exe app
+```
+
+The app opens at <http://localhost:8501> with **1,000 fictional suppliers** from 19 countries that contain
+planted duplicates, tricky look-alikes that are *not* duplicates, and data issues. Start with
+**Overview**, inspect a flagged pair in **Compare**, then record a human decision.
+Choose **Upload a file** or **Database** in the sidebar to use your own data.
+
+Optional Gemini, embeddings and SQLAlchemy support: `python -m pip install -e ".[all]"`
+(use `.\.venv\Scripts\python.exe` in PowerShell).
+
+**Docker:** `docker compose up --build`, then open <http://localhost:8501>.
+
 ## Features
 
 | | |
@@ -49,24 +84,6 @@ Runs locally, in English or Spanish. No API key needed. Your data is never modif
 <td colspan="2"><img src="docs/images/overview_es.png" alt="The interface in Spanish"><br><sub>The same app in Spanish</sub></td>
 </tr>
 </table>
-
-## Quick start
-
-Requires Python 3.11+.
-
-```bash
-git clone https://github.com/ImadC9/supplier-integrity-desk
-cd supplier-integrity-desk
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -e ".[all]"            # or: pip install -e .   (without Gemini, embeddings and SQLAlchemy)
-supplier-desk app
-```
-
-The app opens at <http://localhost:8501> with **1,000 fictional suppliers** from 19 countries that contain
-planted duplicates, tricky look-alikes that are *not* duplicates, and data issues. Choose **Upload a file** or **Database** in the sidebar to use your own data.
-
-**Docker:** `docker compose up --build`, then open <http://localhost:8501>.
 
 ## Use your own data
 
