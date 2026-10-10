@@ -1,0 +1,38 @@
+name: Bug report
+description: Something does not work as described
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never attach real supplier data, tax IDs or bank details.** Reproduce with the sample data
+        (`supplier-desk sample`) or a small anonymized file.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected and what you saw instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Upload ...
+        2. Open the Review queue ...
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `supplier-desk --version`
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows, macOS, Linux, Docker]
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error message or traceback
+      render: text

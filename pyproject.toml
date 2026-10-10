@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supplier-integrity-desk"
+dynamic = ["version"]
+description = "Explainable supplier duplicate and data-quality review for procurement master data, with a human-in-the-loop AI investigation agent."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "ImadC9" }]
+keywords = [
+    "procurement", "master-data", "data-quality", "deduplication", "vendor-master",
+    "supplier", "langgraph", "streamlit", "entity-resolution",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "openpyxl>=3.1",
+    "rapidfuzz>=3.9",
+    "streamlit>=1.50",
+    "altair>=5",
+    "langchain-core>=0.3",
+    "langgraph>=0.6",
+    "llama-index-core>=0.12",
+]
+
+[project.optional-dependencies]
+gemini = ["google-genai>=1.30"]
+semantic = ["fastembed>=0.6"]
+database = ["sqlalchemy>=2.0"]
+all = ["supplier-integrity-desk[gemini,semantic,database]"]
+dev = ["ruff>=0.6"]
+
+[project.scripts]
+supplier-desk = "supplier_agent.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ImadC9/supplier-integrity-desk"
+Issues = "https://github.com/ImadC9/supplier-integrity-desk/issues"
+
+[tool.setuptools]
+packages = ["supplier_agent", "supplier_agent.workflow"]
+
+[tool.setuptools.package-data]
+supplier_agent = ["resources/*.xlsx", "resources/*.db", "resources/policies/*.md"]
+
+[tool.setuptools.dynamic]
+version = { attr = "supplier_agent.__version__" }
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+extend-exclude = [".venv*", "outputs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "B008", "B023", "B905"]
+
+[tool.ruff.lint.per-file-ignores]
+"supplier_agent/app.py" = ["E402"]
+"tests/*" = ["B"]

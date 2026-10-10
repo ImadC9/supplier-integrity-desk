@@ -1,0 +1,16 @@
+services:
+  desk:
+    build: .
+    image: supplier-integrity-desk:latest
+    ports:
+      - "8501:8501"
+    volumes:
+      - desk-data:/data          # review history and optional model cache
+    environment:
+      # Optional AI explanations. Leave empty to stay fully offline.
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.6-flash}
+    restart: unless-stopped
+
+volumes:
+  desk-data:
