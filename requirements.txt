@@ -8,7 +8,7 @@ altair==6.3.0
 langchain-core==1.6.3
 langgraph==1.2.11
 llama-index-core==0.14.24
-streamlit==1.63.0
+streamlit==1.65.0
 # Optional features
 google-genai==2.23.0
 fastembed==0.8.0
