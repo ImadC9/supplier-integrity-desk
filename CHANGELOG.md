@@ -1,6 +1,8 @@
 # Changelog
 
-## 1.0.0 — first public release
+## 0.1.0 — 2026-10-10
+
+First public GitHub release.
 
 - **Bring your own file:** Excel or CSV/TSV from any ERP with automatic column mapping
   (SAP, generic and canonical header names), sheet selection and a blank template.

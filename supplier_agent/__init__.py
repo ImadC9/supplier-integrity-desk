@@ -1,6 +1,6 @@
 """Supplier Integrity Desk — explainable supplier duplicate and data-quality review."""
 
-__version__ = "1.0.0"
+__version__ = "0.1.0"
 
 from .detector import DetectionConfig, DuplicateDetector
 from .io import load_supplier_master
