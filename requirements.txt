@@ -1,6 +1,6 @@
 # Pinned, tested versions (also used by Streamlit Community Cloud and Docker).
 # For a regular install prefer: pip install -e ".[all]"
-pandas==2.3.3
+pandas==3.0.6
 openpyxl==3.1.5
 rapidfuzz==3.14.6
 numpy==2.5.3
